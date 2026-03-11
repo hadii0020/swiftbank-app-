@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/swiftbank-app-/static/css/main.57c71d8c.css",
-    "main.js": "/swiftbank-app-/static/js/main.d5d20804.js",
+    "main.css": "/swiftbank-app-/static/css/main.33ea5113.css",
+    "main.js": "/swiftbank-app-/static/js/main.0c433709.js",
     "static/js/156.e5fb6eb8.chunk.js": "/swiftbank-app-/static/js/156.e5fb6eb8.chunk.js",
     "index.html": "/swiftbank-app-/index.html",
-    "main.57c71d8c.css.map": "/swiftbank-app-/static/css/main.57c71d8c.css.map",
-    "main.d5d20804.js.map": "/swiftbank-app-/static/js/main.d5d20804.js.map",
+    "main.33ea5113.css.map": "/swiftbank-app-/static/css/main.33ea5113.css.map",
+    "main.0c433709.js.map": "/swiftbank-app-/static/js/main.0c433709.js.map",
     "156.e5fb6eb8.chunk.js.map": "/swiftbank-app-/static/js/156.e5fb6eb8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.57c71d8c.css",
-    "static/js/main.d5d20804.js"
+    "static/css/main.33ea5113.css",
+    "static/js/main.0c433709.js"
   ]
 }
