@@ -4,6 +4,8 @@ function Dashboard({ onLogout }) {
   const [recipient, setRecipient] = useState('');
   const [amount, setAmount] = useState('');
   const [sendMsg, setSendMsg] = useState('');
+  const [showNotif, setShowNotif] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   const handleSend = () => {
     if (recipient === '' || amount === '') {
@@ -21,18 +23,42 @@ function Dashboard({ onLogout }) {
     <div className="dashboard">
 
       {/* SIDEBAR */}
-      <div className="sidebar">
-        <h2 className="sidebar-logo">Swift<span>Bank</span></h2>
+      <div className={`sidebar ${sidebarOpen ? 'open' : 'closed'}`}>
+        <div className="sidebar-top">
+          {sidebarOpen && <h2 className="sidebar-logo">Swift<span>Bank</span></h2>}
+          <button className="toggle-btn" onClick={() => setSidebarOpen(!sidebarOpen)}>
+            {sidebarOpen ? '◀' : '▶'}
+          </button>
+        </div>
         <nav className="sidebar-nav">
-          <a href="#" className="nav-item active">🏠 Dashboard</a>
-          <a href="#" className="nav-item">💳 Cards</a>
-          <a href="#" className="nav-item">📤 Transfer</a>
-          <a href="#" className="nav-item">📊 Analytics</a>
-          <a href="#" className="nav-item">👤 Profile</a>
-          <a href="#" className="nav-item">⚙️ Settings</a>
+          <a href="#" className="nav-item active">
+            <span className="nav-icon">🏠</span>
+            {sidebarOpen && <span className="nav-text">Dashboard</span>}
+          </a>
+          <a href="#" className="nav-item">
+            <span className="nav-icon">💳</span>
+            {sidebarOpen && <span className="nav-text">Cards</span>}
+          </a>
+          <a href="#" className="nav-item">
+            <span className="nav-icon">📤</span>
+            {sidebarOpen && <span className="nav-text">Transfer</span>}
+          </a>
+          <a href="#" className="nav-item">
+            <span className="nav-icon">📊</span>
+            {sidebarOpen && <span className="nav-text">Analytics</span>}
+          </a>
+          <a href="#" className="nav-item">
+            <span className="nav-icon">👤</span>
+            {sidebarOpen && <span className="nav-text">Profile</span>}
+          </a>
+          <a href="#" className="nav-item">
+            <span className="nav-icon">⚙️</span>
+            {sidebarOpen && <span className="nav-text">Settings</span>}
+          </a>
         </nav>
         <button className="logout-btn" onClick={onLogout}>
-          🚪 Logout
+          <span className="nav-icon">🚪</span>
+          {sidebarOpen && <span className="nav-text">Logout</span>}
         </button>
       </div>
 
@@ -45,7 +71,36 @@ function Dashboard({ onLogout }) {
             <h1>Good morning, Abdulhadi 👋</h1>
             <p>Tuesday, March 11, 2026</p>
           </div>
-          <div className="header-avatar">A</div>
+          <div className="header-right">
+            <div className="notification-bell" onClick={() => setShowNotif(!showNotif)}>
+              🔔
+              <span className="notif-badge">3</span>
+              {showNotif && (
+                <div className="notif-dropdown">
+                  <h4>Notifications</h4>
+                  <div className="notif-item">
+                    <span className="notif-dot green"></span>
+                    <p>Salary of $3,500 received</p>
+                  </div>
+                  <div className="notif-item">
+                    <span className="notif-dot blue"></span>
+                    <p>Transfer to John confirmed</p>
+                  </div>
+                  <div className="notif-item">
+                    <span className="notif-dot orange"></span>
+                    <p>Bill payment due tomorrow</p>
+                  </div>
+                </div>
+              )}
+            </div>
+            <div className="avatar-container">
+              <div className="avatar">AH</div>
+              <div className="avatar-info">
+                <h4>Abdulhadi</h4>
+                <p>Premium Account</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* BALANCE CARD */}
@@ -58,33 +113,24 @@ function Dashboard({ onLogout }) {
           <div className="card-chip">💳</div>
         </div>
 
-        {/* STATS */}
-        <div className="stats-grid">
-          <div className="stat-card">
-            <span className="stat-icon">📥</span>
-            <div>
-              <h3>$10,240</h3>
-              <p>Total Income</p>
-            </div>
-          </div>
-          <div className="stat-card">
-            <span className="stat-icon">📤</span>
-            <div>
-              <h3>$1,830</h3>
-              <p>Total Expenses</p>
-            </div>
-          </div>
-          <div className="stat-card">
-            <span className="stat-icon">💰</span>
-            <div>
-              <h3>$3,410</h3>
-              <p>Net Savings</p>
-            </div>
-          </div>
-        </div>
+        {/* QUICK ACTIONS */}
+<div className="quick-actions-grid">
+  <div className="quick-action-card">
+    <div className="quick-action-icon blue">📤</div>
+    <p>Transfer</p>
+  </div>
+  <div className="quick-action-card">
+    <div className="quick-action-icon red">💸</div>
+    <p>Withdraw</p>
+  </div>
+  <div className="quick-action-card">
+    <div className="quick-action-icon green">📥</div>
+    <p>Deposit</p>
+  </div>
+</div>
 
         {/* BOTTOM GRID */}
-        <div className="bottom-grid">
+        <div className="bottom-grid full">
 
           {/* TRANSACTIONS */}
           <div className="section-card">
@@ -131,53 +177,7 @@ function Dashboard({ onLogout }) {
             </div>
           </div>
 
-          {/* SEND MONEY */}
-          <div className="section-card">
-            <h2>Send Money</h2>
-            {sendMsg && (
-              <div style={{
-                padding: '12px',
-                borderRadius: '8px',
-                marginBottom: '16px',
-                background: sendMsg.includes('✅') ? '#f0fdf4' : '#fef2f2',
-                color: sendMsg.includes('✅') ? '#16a34a' : '#dc2626',
-                fontSize: '14px'
-              }}>
-                {sendMsg}
-              </div>
-            )}
-            <div className="send-form">
-              <div className="form-group">
-                <label>Recipient Name</label>
-                <input
-                  type="text"
-                  placeholder="Enter recipient name"
-                  value={recipient}
-                  onChange={(e) => setRecipient(e.target.value)}
-                />
-              </div>
-              <div className="form-group">
-                <label>Account Number</label>
-                <input
-                  type="text"
-                  placeholder="Enter account number"
-                />
-              </div>
-              <div className="form-group">
-                <label>Amount ($)</label>
-                <input
-                  type="number"
-                  placeholder="Enter amount"
-                  value={amount}
-                  onChange={(e) => setAmount(e.target.value)}
-                />
-              </div>
-              <button className="send-btn" onClick={handleSend}>
-                Send Money 📤
-              </button>
-            </div>
-          </div>
-
+         
         </div>
       </div>
     </div>
