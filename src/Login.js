@@ -23,13 +23,13 @@ function Login({ onSwitch, onLogin }) {
   return (
     <div className="login-container">
       <div className="login-left">
-        <h1>Swift<span style={{color:'#93c5fd'}}>Bank</span></h1>
-        <p>Your trusted digital banking partner. Fast, secure and reliable.</p>
+        <h1>Swift<span style={{color:'#93c5fd'}}>wallet</span></h1>
+        <p>Your fast, secure and reliable digital wallet.</p>
       </div>
       <div className="login-right">
         <div className="login-box">
           <h2>Welcome Back 👋</h2>
-          <p>Sign in to your SwiftBank account</p>
+          <p>Sign in to your Swift wallet account</p>
 
           {message && (
             <div className={success ? 'msg success' : 'msg error'}>
