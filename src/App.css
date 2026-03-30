@@ -1463,3 +1463,601 @@ body {
   color: #444;
   margin: 0;
 }
+/* SECTION CARDS */
+.section-card {
+  background: #0d1117;
+  border: 1px solid #1a2535;
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: border-color 0.2s;
+}
+
+.section-card:hover { border-color: #00e5ff1a; }
+
+.section-card h2 {
+  font-size: 12px;
+  color: #444;
+  margin-bottom: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* COIN SELECTOR */
+.coin-selector {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.coin-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: #080d12;
+  border: 1px solid #1a2535;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+}
+
+.coin-option:hover {
+  border-color: #00e5ff33;
+  color: #00e5ff;
+}
+
+.coin-option.selected {
+  border-color: #00e5ff;
+  background: #00e5ff11;
+  color: #00e5ff;
+}
+
+/* PRICE INFO BAR */
+.price-info-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #080d12;
+  border: 1px solid #1a2535;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+}
+
+/* TRADE ACTIONS */
+.trade-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* BUY SELL */
+.buy-sell-section {
+  margin-bottom: 20px;
+}
+
+.amount-input-wrapper {
+  display: flex;
+  align-items: center;
+  background: #080d12;
+  border: 1px solid #1a2535;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.amount-input-wrapper:focus-within {
+  border-color: #00e5ff;
+}
+
+.currency-label {
+  padding: 14px 16px;
+  color: #00e5ff;
+  font-weight: 700;
+  font-size: 18px;
+  border-right: 1px solid #1a2535;
+  background: #0d1117;
+}
+
+.amount-input-wrapper input {
+  flex: 1;
+  padding: 14px 16px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  outline: none;
+}
+
+.conversion-hint {
+  font-size: 12px;
+  color: #444;
+  margin-top: 6px;
+  margin-left: 4px;
+}
+
+.trade-divider {
+  height: 1px;
+  background: #1a2535;
+  margin: 20px 0;
+}
+
+/* BUY SELL BUTTONS */
+.buy-btn {
+  width: 100%;
+  padding: 12px;
+  background: #00e5ff11;
+  color: #00e5ff;
+  border: 1px solid #00e5ff33;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 10px;
+}
+
+.buy-btn:hover {
+  background: #00e5ff22;
+  box-shadow: 0 0 16px #00e5ff22;
+}
+
+.sell-btn {
+  width: 100%;
+  padding: 12px;
+  background: #ff444411;
+  color: #ff4444;
+  border: 1px solid #ff444433;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 10px;
+}
+
+.sell-btn:hover {
+  background: #ff444422;
+  box-shadow: 0 0 16px #ff444422;
+}
+
+/* SWAP */
+.swap-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.swap-box {
+  background: #080d12;
+  border: 1px solid #1a2535;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.swap-box label {
+  font-size: 12px;
+  color: #444;
+  display: block;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.swap-input-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.swap-select {
+  flex: 1;
+  padding: 10px 12px;
+}
+
+.swap-amount-input {
+  flex: 1;
+  padding: 10px 12px;
+  background: #0d1117;
+  border: 1px solid #1a2535;
+  border-radius: 8px;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  outline: none;
+  text-align: right;
+  width: 100%;
+}
+
+.swap-amount-input:focus {
+  border-color: #00e5ff;
+}
+
+.swap-estimate {
+  flex: 1;
+  text-align: right;
+  font-size: 20px;
+}
+
+.swap-balance {
+  font-size: 11px;
+  color: #444;
+  margin: 8px 0 0;
+}
+
+.swap-arrow {
+  text-align: center;
+  font-size: 20px;
+  color: #00e5ff;
+  cursor: pointer;
+  padding: 8px;
+  background: #00e5ff11;
+  border: 1px solid #00e5ff33;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: all 0.2s;
+  font-weight: 700;
+}
+
+.swap-arrow:hover {
+  background: #00e5ff22;
+  transform: rotate(180deg);
+}
+
+.swap-rate {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #080d12;
+  border: 1px solid #1a2535;
+  border-radius: 10px;
+  font-size: 13px;
+  color: #444;
+}
+
+.swap-rate span:last-child { color: white; font-weight: 600; }
+
+/* HIDE BUTTON */
+.hide-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px;
+  transition: transform 0.2s;
+}
+
+.hide-btn:hover { transform: scale(1.2); }
+/* CRYPTO PAGE HEADER */
+.crypto-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.portfolio-badge {
+  background: #0d1117;
+  border: 1px solid #1a2535;
+  border-radius: 16px;
+  padding: 16px 24px;
+  text-align: right;
+}
+
+.portfolio-badge p {
+  font-size: 12px;
+  color: #444;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.portfolio-badge h2 {
+  font-size: 24px;
+  color: white;
+  font-weight: 900;
+  margin-bottom: 4px;
+}
+
+/* HOLDING BAR */
+.crypto-holding-bar {
+  width: 80px;
+  height: 4px;
+  background: #1a2535;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.holding-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s;
+}
+
+/* MARKET HEADER ROW */
+.market-header-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 12px 12px;
+  border-bottom: 1px solid #1a2535;
+  margin-bottom: 8px;
+}
+
+.market-header-row span {
+  font-size: 11px;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* MINI TRADE BUTTON */
+.mini-trade-btn {
+  padding: 6px 14px;
+  background: #00e5ff11;
+  color: #00e5ff;
+  border: 1px solid #00e5ff33;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.mini-trade-btn:hover {
+  background: #00e5ff22;
+}
+
+/* TRADE MESSAGE */
+.trade-msg {
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.trade-msg.success {
+  background: #00e5ff11;
+  color: #00e5ff;
+  border: 1px solid #00e5ff33;
+}
+
+.trade-msg.error {
+  background: #ff444411;
+  color: #ff4444;
+  border: 1px solid #ff444433;
+}
+
+/* SWAP PAGE LAYOUT */
+.swap-page-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.swap-main-card {
+  background: #0d1117;
+}
+
+/* SWAP BOX */
+.swap-box {
+  background: #080d12;
+  border: 1px solid #1a2535;
+  border-radius: 16px;
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+
+.swap-box:focus-within {
+  border-color: #00e5ff33;
+}
+
+.swap-box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.swap-box-header label {
+  font-size: 12px;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.swap-balance-label {
+  font-size: 12px;
+  color: #444;
+}
+
+.swap-input-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.swap-coin-select {
+  flex: 1;
+  padding: 10px 12px;
+  background: #0d1117;
+  border: 1px solid #1a2535;
+  border-radius: 10px;
+  color: #eee;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+}
+
+.swap-coin-select:focus { border-color: #00e5ff; }
+
+.swap-amount-input {
+  flex: 1;
+  padding: 10px 12px;
+  background: #0d1117;
+  border: 1px solid #1a2535;
+  border-radius: 10px;
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+  outline: none;
+  text-align: right;
+  max-width: 160px;
+  transition: border-color 0.2s;
+}
+
+.swap-amount-input:focus { border-color: #00e5ff; }
+
+.swap-usd-value {
+  font-size: 12px;
+  color: #444;
+  margin-top: 8px;
+  text-align: right;
+}
+
+.swap-estimate-box {
+  flex: 1;
+  text-align: right;
+  max-width: 160px;
+}
+
+.swap-estimate-amount {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  color: #00e5ff;
+}
+
+.swap-estimate-usd {
+  display: block;
+  font-size: 12px;
+  color: #444;
+  margin-top: 4px;
+}
+
+/* SWAP ARROW */
+.swap-arrow-container {
+  display: flex;
+  justify-content: center;
+  margin: 12px 0;
+}
+
+.swap-arrow-btn {
+  background: #00e5ff11;
+  border: 1px solid #00e5ff33;
+  color: #00e5ff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  font-weight: 700;
+}
+
+.swap-arrow-btn:hover {
+  background: #00e5ff22;
+  transform: rotate(180deg);
+  box-shadow: 0 0 16px #00e5ff22;
+}
+
+/* SWAP RATE BAR */
+.swap-rate-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #080d12;
+  border: 1px solid #1a2535;
+  border-radius: 10px;
+  font-size: 13px;
+  color: #444;
+  margin: 16px 0;
+}
+
+.swap-rate-bar span:last-child {
+  color: white;
+  font-weight: 600;
+}
+
+/* SWAP CONFIRM BUTTON */
+.swap-confirm-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #00e5ff, #0072ff);
+  color: #050a0e;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 8px;
+}
+
+.swap-confirm-btn:hover {
+  opacity: 0.9;
+  box-shadow: 0 0 24px #00e5ff33;
+  transform: translateY(-1px);
+}
+
+/* SLIPPAGE */
+.slippage-options {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.slippage-btn {
+  padding: 8px 14px;
+  background: #080d12;
+  border: 1px solid #1a2535;
+  border-radius: 8px;
+  color: #444;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.slippage-btn.active {
+  background: #00e5ff11;
+  border-color: #00e5ff;
+  color: #00e5ff;
+}
+
+.slippage-btn:hover:not(.active) {
+  border-color: #00e5ff33;
+  color: #888;
+}
+
+/* SWAP TIP */
+.swap-tip {
+  background: #00e5ff08;
+  border: 1px solid #00e5ff11;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+@media (max-width: 768px) {
+  .swap-page-layout { grid-template-columns: 1fr; }
+  .crypto-page-header { flex-direction: column; gap: 16px; }
+}

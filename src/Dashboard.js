@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Transfer from './Transfer';
 import Profile from './Profile';
 import Cards from './Cards';
-import Crypto from './Crypto.';
+import Crypto from './crypto';
 
 function Dashboard({ onLogout }) {
   const [activePage, setActivePage] = useState('wallet');
